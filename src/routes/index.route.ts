@@ -15,7 +15,7 @@ class IndexRoute extends BaseRoute implements Routes {
     }
 
     private initializeRoutes() {
-        this.router.get(this.getBaseUrl(`${this.path + 'health'}`), this.indexController.index);
+        this.router.get(this.getBaseUrl(`${this.path + 'health'}`), this.indexController.health);
     }
 }
 
