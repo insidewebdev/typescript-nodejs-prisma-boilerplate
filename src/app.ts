@@ -45,7 +45,7 @@ class App {
     public listen() {
         this.app.listen(this.port, () => {
             logger.info(`=================================`);
-            logger.info(`======= ENV: ${this.env} =======`);
+            logger.info(`======= ENV: ${this.env} ========`);
             logger.info(`🚀 App listening on the port ${this.port}`);
             logger.info(`=================================`);
         });
@@ -61,7 +61,7 @@ class App {
         // }
 
         // connect(dbConnection);
-        console.log('Database connected')
+        logger.info('Database connected')
     }
 
     private initializeMiddlewares() {
@@ -93,17 +93,17 @@ class App {
             });
 
         process.on('SIGTERM', () => {
-            console.log('👋 SIGTERM signal received. Exiting gracefully');
+            logger.info('👋 SIGTERM signal received. Exiting gracefully');
             process.exit(0);
         })
 
         process.once('SIGUSR2', function () {
-            console.log('👋 SIGUSR2 signal received. Exiting gracefully');
+            logger.info('👋 SIGUSR2 signal received. Exiting gracefully');
             process.kill(process.pid, 'SIGUSR2');
         });
 
         process.on('SIGINT', function () {
-            console.log('👋 SIGINT signal received. Exiting gracefully');
+            logger.info('👋 SIGINT signal received. Exiting gracefully');
             // this is only called on ctrl+c, not restart
             process.kill(process.pid, 'SIGINT');
             process.exit(0);

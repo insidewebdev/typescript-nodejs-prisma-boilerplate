@@ -1,10 +1,11 @@
 import App from '@/app';
+import IndexRoute from '@routes/index.route';
 import validateEnv from '@utils/validateEnv';
 import fs from 'fs';
 
 validateEnv();
 
-const routes = []
+const routes = [new IndexRoute()]
 
 // check if DevRoute file exists and import dynamically
 const devRouteFilePath = './routes/dev.route.ts';
