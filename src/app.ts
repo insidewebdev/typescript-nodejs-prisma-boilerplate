@@ -9,7 +9,7 @@ import morgan from 'morgan';
 import { NODE_ENV, PORT, LOG_FORMAT, ORIGIN, CREDENTIALS } from '@config';
 // import { dbConnection } from '@databases';
 // import { Routes } from '@interfaces/routes.interface';
-// import errorMiddleware from '@middlewares/error.middleware';
+import errorMiddleware from '@middlewares/error.middleware';
 import { logger, stream } from '@utils/logger';
 // import listeners from './listeners';
 import { Routes } from '@interfaces/routes.interface';
@@ -111,7 +111,7 @@ class App {
     }
 
     private initializeErrorHandling() {
-        // this.app.use(errorMiddleware);
+        this.app.use(errorMiddleware);
     }
 
     private registerEventListeners() {
