@@ -11,6 +11,60 @@
     "strict": true,
     "noImplicitAny": true,
     "esModuleInterop": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "baseUrl": "src",
+    "paths": {
+      "@/*": [
+        "*"
+      ],
+      "@config": [
+        "config"
+      ],
+      "@controllers/*": [
+        "controllers/*"
+      ],
+      "@databases": [
+        "databases"
+      ],
+      "@dtos/*": [
+        "dtos/*"
+      ],
+      "@exceptions/*": [
+        "exceptions/*"
+      ],
+      "@interfaces/*": [
+        "interfaces/*"
+      ],
+      "@middlewares/*": [
+        "middlewares/*"
+      ],
+      "@models/*": [
+        "models/*"
+      ],
+      "@routes/*": [
+        "routes/*"
+      ],
+      "@services/*": [
+        "services/*"
+      ],
+      "@utils/*": [
+        "utils/*"
+      ],
+      "@transformers/*": [
+        "transformers/*"
+      ],
+      "@enums/*": [
+        "enums/*"
+      ],
+      "@helpers/*": [
+        "helpers/*"
+      ],
+      "@credentials/*": [
+        "credentials/*"
+      ],
+      "@listeners/*": [
+        "listeners/*"
+      ]
+    }
   }
 }

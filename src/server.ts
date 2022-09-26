@@ -1,7 +1,22 @@
-import express from "express";
+import App from '@/app';
+import validateEnv from '@utils/validateEnv';
+import fs from 'fs';
 
-const app = express()
+validateEnv();
 
-app.listen(3000, () => {
-    console.log('Listening on port 3000')
-})
+const routes = []
+
+// check if DevRoute file exists and import dynamically
+const devRouteFilePath = './routes/dev.route.ts';
+
+try {
+    if (fs.existsSync('./src/routes/dev.route.ts')) {
+        const DevRoute = require(devRouteFilePath).default;
+        routes.push(new DevRoute());
+    }
+} catch (error) { }
+
+
+const app = new App(routes);
+
+app.listen();
