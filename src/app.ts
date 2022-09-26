@@ -84,11 +84,11 @@ class App {
     private initializeProcessListeners() {
         process
             .on('unhandledRejection', (reason, p) => {
-                console.error(reason, 'Unhandled Rejection at Promise', p);
+                logger.error('Unhandled Rejection at Promise: ' + reason + '  ' + p);
             })
 
             .on('uncaughtException', err => {
-                console.error(err, 'Uncaught Exception thrown');
+                logger.error('Uncaught Exception thrown:' + err);
                 process.exit(1);
             });
 
